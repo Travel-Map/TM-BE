@@ -1,6 +1,7 @@
 package com.hackathon.travelmap.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class Region {
     @Column(name = "region_id")
     private Long id;
 
+    @Getter
     private String name;
 
     private Boolean isVisited;

@@ -1,11 +1,14 @@
 package com.hackathon.travelmap.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
+@Getter
 @Entity
 public class Post {
 
@@ -42,4 +45,11 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<TravelImage> travelImages = new ArrayList<>();
+
+    /* 연관 메서드 */
+    public List<String> getTravelImages() {
+        return travelImages.stream()
+                .map(TravelImage::getImageUrl)
+                .toList();
+    }
 }
