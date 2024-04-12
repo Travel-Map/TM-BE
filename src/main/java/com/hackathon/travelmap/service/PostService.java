@@ -4,6 +4,7 @@ import com.hackathon.travelmap.domain.Post;
 import com.hackathon.travelmap.domain.Region;
 import com.hackathon.travelmap.domain.User;
 import com.hackathon.travelmap.dto.requestDto.CreatePostRequestDto;
+import com.hackathon.travelmap.dto.responseDto.PostCardItemResponseDto;
 import com.hackathon.travelmap.dto.responseDto.SinglePostDetailResponseDto;
 import com.hackathon.travelmap.repository.PostRepository;
 import com.hackathon.travelmap.repository.RegionRepository;
@@ -12,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -47,4 +50,19 @@ public class PostService {
         Post post = createPostRequestDto.toPost(user, region);
         postRepository.save(post);
     }
+
+    /**
+     * 현재 User가 보유한 post들을 리스트로 반환 but 현재는 로그인이 없어 user_id=1인 사용자로 고정
+     * @return User가 보유한 post들을 리스트
+     */
+    public List<PostCardItemResponseDto> findAllCardItemsByUser() {
+        User user = userRepository.findById(1l).orElseThrow(() -> new RuntimeException("id에 맞는 User를 찾을 수 없습니다."));
+
+        log.info("user nickname = " + user.getNickname());
+        List<Post> posts = postRepository.findAllByUser(user);
+        return posts.stream()
+                .map(PostCardItemResponseDto::of)
+                .toList();
+    }
+
 }

@@ -1,4 +1,4 @@
-INSERT INTO USERS (register_at, user_id, email, nickname, password)
+INSERT INTO user (register_at, user_id, email, nickname, password)
 VALUES ('2024-04-12', 1, 'audrhks123@gmail.com', '명관', 'password1'),
        ('2024-04-12', 2, 'alsdn123@gmail.com', '민우', 'password2'),
        ('2024-04-12', 3, 'fnek123@gmail.com', '루다', 'password3'),
@@ -20,7 +20,7 @@ VALUES (true, 1, '서울시'),
 INSERT INTO post (write_at, post_id, region_id, user_id, content, title, travel_end, travel_spot, travel_start)
 VALUES ('2024-04-12', 1, 1, 1, '종로를 돌아다녔다', '나의 서울여행', '2024-03-13', '종로구', '2024-03-11'),
        ('2024-04-11', 2, 2, 2, '한라산을 올랐다', '나의 제주여행', '2024-03-12', '한라산', '2024-03-09'),
-       ('2024-04-12', 3, 3, 3, '어딘가를 돌아다녔다', '나의 경상북도여행', '2024-03-13', '어딘가', '2024-03-11');
+       ('2024-04-12', 3, 3, 3, '어딘가를 돌아다녔다', '나의 경기도여행', '2024-03-13', '어딘가', '2024-03-11');
 
 INSERT INTO likes (like_id, post_id, user_id)
 VALUES (1, 1, 1),
