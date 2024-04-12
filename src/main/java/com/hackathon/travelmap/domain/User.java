@@ -14,12 +14,16 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+    @Column(nullable = false)
     private String nickname;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private LocalDate register_at;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

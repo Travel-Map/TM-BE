@@ -13,8 +13,10 @@ public class Region {
     @Column(name = "region_id")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private Boolean isVisited;
 
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
