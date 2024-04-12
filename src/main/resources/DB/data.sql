@@ -1,4 +1,4 @@
-INSERT INTO user (register_at, user_id, email, nickname, password)
+INSERT INTO USERS (register_at, user_id, email, nickname, password)
 VALUES ('2024-04-12', 1, 'audrhks123@gmail.com', '명관', 'password1'),
        ('2024-04-12', 2, 'alsdn123@gmail.com', '민우', 'password2'),
        ('2024-04-12', 3, 'fnek123@gmail.com', '루다', 'password3'),
