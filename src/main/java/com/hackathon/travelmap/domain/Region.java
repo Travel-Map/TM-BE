@@ -6,6 +6,7 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @Entity
 public class Region {
 
@@ -23,4 +24,5 @@ public class Region {
 
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
     private List<Post> posts = new ArrayList<>();
+
 }
