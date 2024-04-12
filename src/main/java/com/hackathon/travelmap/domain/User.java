@@ -1,7 +1,6 @@
 package com.hackathon.travelmap.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,13 +14,16 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Getter
+    @Column(nullable = false)
     private String nickname;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private LocalDate register_at;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

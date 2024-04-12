@@ -1,7 +1,6 @@
 package com.hackathon.travelmap.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +13,10 @@ public class Region {
     @Column(name = "region_id")
     private Long id;
 
-    @Getter
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private Boolean isVisited;
 
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)

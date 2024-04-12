@@ -12,6 +12,7 @@ public class TravelImage {
     private Long id;
 
     @Getter
+    @Column(nullable = false)
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
