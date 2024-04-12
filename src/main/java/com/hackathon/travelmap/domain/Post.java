@@ -1,7 +1,9 @@
 package com.hackathon.travelmap.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.stream.Stream;
 
 @Getter
 @Entity
+@NoArgsConstructor
 public class Post {
 
     @Id
@@ -51,6 +54,19 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<TravelImage> travelImages = new ArrayList<>();
+
+    /* 빌더 */
+    @Builder
+    public Post(String title, String travelStart, String travelEnd, String travelSpot, String content, User user, Region region) {
+        this.title = title;
+        this.writeAt = LocalDate.now();
+        this.travelStart = travelStart;
+        this.travelEnd = travelEnd;
+        this.travelSpot = travelSpot;
+        this.content = content;
+        this.user = user;
+        this.region = region;
+    }
 
     /* 연관 메서드 */
     public List<String> getTravelImages() {

@@ -1,5 +1,6 @@
 package com.hackathon.travelmap.controller;
 
+import com.hackathon.travelmap.dto.requestDto.CreatePostRequestDto;
 import com.hackathon.travelmap.dto.responseDto.SinglePostDetailResponseDto;
 import com.hackathon.travelmap.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -23,5 +24,16 @@ public class PostController {
     @GetMapping("/detail/{postId}")
     public ResponseEntity<SinglePostDetailResponseDto> getSinglePostDetail(@PathVariable Long postId) {
         return ResponseEntity.ok(postService.findSinglePostDetail(postId));
+    }
+
+    /**
+     * 포스트 생성
+     * @param createPostRequestDto
+     * @return nothing
+     */
+    @PostMapping("/write")
+    public ResponseEntity<Void> createPost(@RequestBody CreatePostRequestDto createPostRequestDto) {
+        postService.createPost(createPostRequestDto);
+        return ResponseEntity.noContent().build();
     }
 }
