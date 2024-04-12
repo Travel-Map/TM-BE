@@ -3,7 +3,7 @@ package com.hackathon.travelmap.domain;
 import jakarta.persistence.*;
 
 @Entity
-public class Like {
+public class Likes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

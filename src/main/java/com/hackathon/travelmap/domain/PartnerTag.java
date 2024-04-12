@@ -15,6 +15,6 @@ public class PartnerTag {
 
     private String name;
 
-    @OneToMany(mappedBy = "partner_tag", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "partnerTag", cascade = CascadeType.ALL)
     private List<PostPartnerTag> postPartnerTags = new ArrayList<>();
 }
