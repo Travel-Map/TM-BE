@@ -33,8 +33,8 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Likes> likesList = new ArrayList<>();
 
-    @OneToOne(mappedBy = "post", cascade = CascadeType.ALL)
-    private PostPartnerTag postPartnerTag;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<PostPartnerTag> postPartnerTags = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
