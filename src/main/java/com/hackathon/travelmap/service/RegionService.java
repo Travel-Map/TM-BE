@@ -21,5 +21,9 @@ public class RegionService {
         RegionResponseDto responseDto = RegionResponseDto.of(region); // DTO 변환
         return responseDto;
     }
+    public List<RegionResponseDto> findAll() {
+        List<Region> list = regionRepository.findAll();
+        return list.stream().map(RegionResponseDto::of).toList();
+    }
 
 }
