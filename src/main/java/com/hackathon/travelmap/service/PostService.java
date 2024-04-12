@@ -14,6 +14,11 @@ public class PostService {
 
     private final PostRepository postRepository;
 
+    /**
+     * 단일 포스트 상세페이지 제공
+     * @param postId
+     * @return
+     */
     public SinglePostDetailResponseDto findSinglePostDetail(Long postId) {
         Post post = postRepository.findById(postId).orElseThrow(() -> new RuntimeException("게시물을 찾을 수 없습니다."));
         return SinglePostDetailResponseDto.of(post);

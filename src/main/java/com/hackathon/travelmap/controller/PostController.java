@@ -18,6 +18,11 @@ public class PostController {
 
     private final PostService postService;
 
+    /**
+     * 단일 포스트 페이지 제공 API
+     * @param postId
+     * @return 단일 포스팅 페이지를 위한 데이터
+     */
     @GetMapping("/detail/{postId}")
     public ResponseEntity<SinglePostDetailResponseDto> getSinglePostDetail(@PathVariable Long postId) {
         try {
