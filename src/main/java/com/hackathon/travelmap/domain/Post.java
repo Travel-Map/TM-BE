@@ -74,4 +74,8 @@ public class Post {
                 .map(TravelImage::getImageUrl)
                 .toList();
     }
+
+    public int getLikeCount() {
+        return likesList.size();
+    }
 }
