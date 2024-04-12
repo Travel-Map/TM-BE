@@ -1,6 +1,7 @@
 package com.hackathon.travelmap.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+    @Getter
     @Column(nullable = false)
     private String nickname;
 
