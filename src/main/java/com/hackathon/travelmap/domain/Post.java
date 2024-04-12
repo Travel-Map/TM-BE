@@ -14,16 +14,22 @@ public class Post {
     @Column(name = "post_id")
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private LocalDate writeAt;
 
+    @Column(nullable = false)
     private String travelStart;
 
+    @Column(nullable = false)
     private String travelEnd;
 
+    @Column(nullable = false)
     private String travelSpot;
 
+    @Column(nullable = false)
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)

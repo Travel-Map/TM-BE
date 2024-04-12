@@ -10,6 +10,7 @@ public class TravelImage {
     @Column(name = "travel_image_id")
     private Long id;
 
+    @Column(nullable = false)
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)

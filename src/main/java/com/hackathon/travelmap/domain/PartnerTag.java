@@ -13,6 +13,7 @@ public class PartnerTag {
     @Column(name = "partner_tag_id")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "partnerTag", cascade = CascadeType.ALL)
