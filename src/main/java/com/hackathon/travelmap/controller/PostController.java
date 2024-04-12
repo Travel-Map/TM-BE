@@ -5,10 +5,7 @@ import com.hackathon.travelmap.service.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -25,11 +22,6 @@ public class PostController {
      */
     @GetMapping("/detail/{postId}")
     public ResponseEntity<SinglePostDetailResponseDto> getSinglePostDetail(@PathVariable Long postId) {
-        try {
-            return ResponseEntity.ok(postService.findSinglePostDetail(postId));
-        } catch (RuntimeException e) {
-            log.error(e.getMessage());
-            throw e;
-        }
+        return ResponseEntity.ok(postService.findSinglePostDetail(postId));
     }
 }
