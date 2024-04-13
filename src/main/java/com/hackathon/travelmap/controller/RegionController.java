@@ -28,7 +28,7 @@ public class RegionController {
         return ResponseEntity.ok(regions);
     }
 
-    @GetMapping("/{id}") // ture or false를 반환하기 위해 visited를 추가
+    @GetMapping("/{id}") // ture 혹은 false를 반환하기 위해 visited를 추가
     public ResponseEntity<RegionResponseDto> isVisited(@PathVariable("id") Long id) { // id에 따른 방문 여부 메서드
 //        log.info("/region/{id}/visited에 대한 GET 요청 처리", id);
         return ResponseEntity.ok(regionService.findRegion(id));
